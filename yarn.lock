@@ -2582,7 +2582,7 @@ graphql-ws@^5.4.1:
   resolved "https://registry.yarnpkg.com/graphql-ws/-/graphql-ws-5.11.1.tgz#f9c8b7c64986d1d921f2a820dc68a393853c94e8"
   integrity sha512-AlOO/Gt0fXuSHXe/Weo6o3rIQVnH5MW7ophzeYzL+vYNlkf0NbWRJ6IIFgtSLcv9JpTlQdxSpB3t0SnM47/BHA==
 
-graphql@^16.0.0, graphql@^16.6.0:
+graphql@16, graphql@^16.0.0, graphql@^16.6.0:
   version "16.6.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.6.0.tgz#c2dcffa4649db149f6282af726c8c83f1c7c5fdb"
   integrity sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==
@@ -3317,6 +3317,11 @@ joist-orm@^1.30.1:
     knex "^2.1.0"
     object-hash "^3.0.0"
     pg "^8.7.3"
+
+joist-test-utils@^1.30.1:
+  version "1.30.1"
+  resolved "https://registry.yarnpkg.com/joist-test-utils/-/joist-test-utils-1.30.1.tgz#f131b483bfaf1272a07020facebd3bdbb3b87363"
+  integrity sha512-8Mia62Gy4JHMGTwngxk/lXkYaVP54sTnZrPxPQLQb1/K71fx3kWWGbU42cvgb1JvoeH3GIeQLotzsmN8sgM/jw==
 
 joist-utils@1.30.1:
   version "1.30.1"

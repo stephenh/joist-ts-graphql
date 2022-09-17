@@ -8,8 +8,8 @@ describe("bookResolvers", () => {
     // Given a Book
     const b = newBook(em);
     // Then we can query it
-    const result = await runBookKeys(ctx, b, ["title", "createdAt", "updatedAt"]);
-    expect(b).toMatchObject(result);
+    const result = await runBookKeys(ctx, b, ["title"]);
+    await expect(b).toMatchEntity(result);
   });
 });
 

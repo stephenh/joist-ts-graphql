@@ -5,11 +5,11 @@ import { makeRunResolver, makeRunResolverKeys } from "src/resolvers/testUtils";
 describe("authorResolvers", () => {
   it.withCtx("can return", async (ctx) => {
     const { em } = ctx;
-    // Given a Author
+    // Given an Author
     const a = newAuthor(em);
     // Then we can query it
-    const result = await runAuthorKeys(ctx, a, ["firstName", "lastName", "createdAt", "updatedAt"]);
-    expect(a).toMatchObject(result);
+    const result = await runAuthorKeys(ctx, a, ["firstName", "lastName"]);
+    await expect(a).toMatchEntity(result as any);
   });
 });
 

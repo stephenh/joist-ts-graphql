@@ -1,30 +1,36 @@
 import { EntityManager } from "src/entities";
-import { knex as createKnex, Knex } from "knex";
-import { PostgresDriver } from "joist-orm";
-import { newPgConnectionConfig } from "joist-utils";
+import { toMatchEntity } from "joist-test-utils";
+import { AppContext, newAppContext, ReqContext } from "src/context";
+import "src/setupIt";
 
-let knex: Knex;
+let appContext: AppContext | undefined = undefined;
+let appContextPromise: Promise<AppContext>;
 
-function getKnex(): Knex {
-  return (knex ??= createKnex({
-    client: "pg",
-    connection: newPgConnectionConfig() as any,
-    debug: false,
-    asyncStackTraces: true,
-  }));
-}
-
-export function newEntityManager(): EntityManager {
-  return new EntityManager({}, new PostgresDriver(getKnex()));
+export async function getAppContext(): Promise<AppContext> {
+  if (!appContext) {
+    appContextPromise ??= newAppContext().then((ctx) => (appContext = ctx));
+    await appContextPromise;
+  }
+  return appContext!;
 }
 
 beforeEach(async () => {
-  const knex = await getKnex();
+  const { knex } = await getAppContext();
   await knex.select(knex.raw("flush_database()"));
 });
 
 afterAll(async () => {
-  if (knex) {
-    await knex.destroy();
-  }
+  await (await getAppContext()).close();
 });
+
+type ContextOpts = Partial<ReqContext>;
+
+export async function createTestContext(opts: ContextOpts = {}): Promise<ReqContext> {
+  const appContext = await getAppContext();
+  const ctx = { ...appContext };
+  const em = opts.em ?? new EntityManager(ctx as ReqContext, appContext.driver);
+  const req = null!;
+  return Object.assign(ctx, { em, req });
+}
+
+expect.extend({ toMatchEntity });

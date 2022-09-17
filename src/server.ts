@@ -1,4 +1,4 @@
-import { AppContext, newAppContextForStage, ReqContext } from "src/context";
+import { AppContext, newAppContext, ReqContext } from "src/context";
 import Fastify, { FastifyInstance, FastifyRequest } from "fastify";
 import { EntityManager } from "src/entities";
 import { HealthcheckPlugin } from "src/endpoints/healthcheck";
@@ -38,7 +38,7 @@ export async function createRequestContext(appContext: AppContext, req: FastifyR
 
 if (require.main === module) {
   (async (): Promise<void> => {
-    const context = await newAppContextForStage();
+    const context = await newAppContext();
     await startServer(context);
   })().catch((err) => {
     console.error(err);
