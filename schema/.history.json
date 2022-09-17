@@ -1,0 +1,9 @@
+{
+  "Author": ["books", "createdAt", "firstName", "id", "lastName", "updatedAt"],
+  "Book": ["author", "createdAt", "id", "title", "updatedAt"],
+  "Mutation": ["saveAuthor", "saveBook"],
+  "SaveAuthorInput": ["firstName", "id", "lastName"],
+  "SaveAuthorResult": ["author"],
+  "SaveBookInput": ["authorId", "id", "title"],
+  "SaveBookResult": ["book"]
+}

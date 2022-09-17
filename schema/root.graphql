@@ -1,0 +1,11 @@
+
+type Query {
+  testQuery(error: Boolean): Int!
+}
+
+type Mutation
+
+schema {
+  query: Query
+  mutation: Mutation
+}

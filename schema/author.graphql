@@ -1,0 +1,20 @@
+extend type Mutation {
+  saveAuthor(input: SaveAuthorInput!): SaveAuthorResult!
+}
+
+type Author {
+  id: ID!
+  firstName: String!
+  lastName: String
+  books: [Book!]!
+}
+
+input SaveAuthorInput {
+  id: ID
+  firstName: String
+  lastName: String
+}
+
+type SaveAuthorResult {
+  author: Author!
+}
