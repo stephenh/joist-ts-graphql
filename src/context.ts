@@ -12,7 +12,7 @@ export interface AppContext {
 }
 
 /** Request-level dependencies. */
-export interface ReqContext extends AppContext {
+export interface Context extends AppContext {
   req: FastifyRequest;
   em: EntityManager;
 }

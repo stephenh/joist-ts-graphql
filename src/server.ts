@@ -1,4 +1,4 @@
-import { AppContext, newAppContext, ReqContext } from "src/context";
+import { AppContext, newAppContext, Context } from "src/context";
 import Fastify, { FastifyInstance, FastifyRequest } from "fastify";
 import { EntityManager } from "src/entities";
 import { HealthcheckPlugin } from "src/endpoints/healthcheck";
@@ -12,7 +12,7 @@ async function startServer(context: AppContext) {
 
 declare module "fastify" {
   interface FastifyRequest {
-    ctx: ReqContext;
+    ctx: Context;
   }
 }
 
@@ -29,10 +29,10 @@ export async function createApp(context: AppContext): Promise<FastifyInstance> {
   return app;
 }
 
-export async function createRequestContext(appContext: AppContext, req: FastifyRequest): Promise<ReqContext> {
+export async function createRequestContext(appContext: AppContext, req: FastifyRequest): Promise<Context> {
   const { driver } = appContext;
   const ctx = { ...appContext, req };
-  const em = new EntityManager(ctx as ReqContext, driver);
+  const em = new EntityManager(ctx as Context, driver);
   return Object.assign(ctx, { em });
 }
 

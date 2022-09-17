@@ -17,7 +17,7 @@ import {
   PrimaryKeyField,
   Reference,
 } from "joist-orm";
-import { ReqContext } from "src/context";
+import { Context } from "src/context";
 import { Resolver } from "src/generated/graphql-types";
 
 type GraphQLPrimitive = string | Date | boolean | number | null | undefined;

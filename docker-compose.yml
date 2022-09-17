@@ -23,7 +23,7 @@ services:
     env_file:
       - env/local.env
     environment:
-      - DATABASE_URL=postgres://sample_user:local@localhost:5432/sample_app
+      - DATABASE_URL=postgres://sample_user:local@db:5432/sample_app
     volumes:
       - ./:/home/node/app/
     ports:

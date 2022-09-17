@@ -1,6 +1,6 @@
 import { EntityManager } from "src/entities";
 import { toMatchEntity } from "joist-test-utils";
-import { AppContext, newAppContext, ReqContext } from "src/context";
+import { AppContext, newAppContext, Context } from "src/context";
 import "src/setupIt";
 
 let appContext: AppContext | undefined = undefined;
@@ -23,12 +23,12 @@ afterAll(async () => {
   await (await getAppContext()).close();
 });
 
-type ContextOpts = Partial<ReqContext>;
+type ContextOpts = Partial<Context>;
 
-export async function createTestContext(opts: ContextOpts = {}): Promise<ReqContext> {
+export async function createTestContext(opts: ContextOpts = {}): Promise<Context> {
   const appContext = await getAppContext();
   const ctx = { ...appContext };
-  const em = opts.em ?? new EntityManager(ctx as ReqContext, appContext.driver);
+  const em = opts.em ?? new EntityManager(ctx as Context, appContext.driver);
   const req = null!;
   return Object.assign(ctx, { em, req });
 }

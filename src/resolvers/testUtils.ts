@@ -1,5 +1,5 @@
 import { Entity, EntityManager, isEntity } from "joist-orm";
-import { ReqContext as Context } from "src/context";
+import { Context as Context } from "src/context";
 import { Resolver } from "src/generated/graphql-types";
 
 type MaybePromise<T> = T | Promise<T>;
