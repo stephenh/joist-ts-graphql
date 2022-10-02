@@ -1,6 +1,6 @@
 import { newBook } from "src/entities";
 import { bookResolvers } from "src/resolvers/objects/book/bookResolvers";
-import { makeRunResolver, makeRunResolverKeys } from "src/resolvers/testUtils";
+import { makeRunObject, makeRunObjectFields } from "src/resolvers/testUtils";
 
 describe("bookResolvers", () => {
   it.withCtx("can return", async (ctx) => {
@@ -13,5 +13,5 @@ describe("bookResolvers", () => {
   });
 });
 
-const runBookKeys = makeRunResolverKeys(bookResolvers);
-const runBook = makeRunResolver(bookResolvers);
+const runBookKeys = makeRunObjectFields(bookResolvers);
+const runBook = makeRunObject(bookResolvers);

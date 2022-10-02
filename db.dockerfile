@@ -1,7 +1,9 @@
-FROM postgres:10.7
+FROM postgres:14.0
 ARG APP_DBNAME=sample_app
 ARG APP_USERNAME=sample_user
 ARG APP_PASSWORD=local
+
+ENV POSTGRES_PASSWORD=admin
 
 # Create the init.sh file. This file is only ran once; if you need to re-run it, use `docker-compose rm db`.
 RUN echo "#!/bin/bash" > /init.sh && \

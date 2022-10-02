@@ -1,10 +1,9 @@
 import { Book } from "src/entities";
 import { MutationResolvers } from "src/generated/graphql-types";
-// import { saveEntity } from "src/resolvers/mutations/utils";
+import { saveEntity } from "src/resolvers/utils";
 
 export const saveBook: Pick<MutationResolvers, "saveBook"> = {
   async saveBook(root, args, ctx) {
-    // return { book: await saveEntity(ctx, Book, args.input) };
-    throw new Error("Asdf");
+    return { book: await saveEntity(ctx, Book, args.input) };
   },
 };

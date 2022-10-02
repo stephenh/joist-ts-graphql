@@ -1,5 +1,10 @@
+extend type Query {
+  author(id: ID!): Author!
+}
+
 extend type Mutation {
   saveAuthor(input: SaveAuthorInput!): SaveAuthorResult!
+  deleteAuthor(id: ID!): EmptyResult
 }
 
 type Author {

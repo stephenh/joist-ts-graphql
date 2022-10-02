@@ -7,6 +7,7 @@ export interface Resolvers {
   Book: BookResolvers;
   Mutation: MutationResolvers;
   Query: QueryResolvers;
+  EmptyResult?: EmptyResultResolvers;
   SaveAuthorResult?: SaveAuthorResultResolvers;
   SaveBookResult?: SaveBookResultResolvers;
 }
@@ -27,12 +28,18 @@ export interface BookResolvers {
 }
 
 export interface MutationResolvers {
+  deleteAuthor: Resolver<{}, MutationDeleteAuthorArgs, EmptyResult | null | undefined>;
   saveAuthor: Resolver<{}, MutationSaveAuthorArgs, SaveAuthorResult>;
   saveBook: Resolver<{}, MutationSaveBookArgs, SaveBookResult>;
 }
 
 export interface QueryResolvers {
+  author: Resolver<{}, QueryAuthorArgs, Author>;
   testQuery: Resolver<{}, QueryTestQueryArgs, number>;
+}
+
+export interface EmptyResultResolvers {
+  emptyResult: Resolver<EmptyResult, {}, string | null | undefined>;
 }
 
 export interface SaveAuthorResultResolvers {
@@ -56,15 +63,25 @@ export type SubscriptionResolver<R, A, T> = {
   subscribe: (root: R | undefined, args: A, ctx: Context, info: GraphQLResolveInfo) => AsyncIterator<T>;
 };
 
+export interface MutationDeleteAuthorArgs {
+  id: string;
+}
 export interface MutationSaveAuthorArgs {
   input: SaveAuthorInput;
 }
 export interface MutationSaveBookArgs {
   input: SaveBookInput;
 }
+export interface QueryAuthorArgs {
+  id: string;
+}
 export interface QueryTestQueryArgs {
   error?: boolean | null | undefined;
 }
+export interface EmptyResult {
+  emptyResult: string | null | undefined;
+}
+
 export interface SaveAuthorResult {
   author: Author;
 }

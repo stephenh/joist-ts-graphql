@@ -8,3 +8,7 @@ schema {
   query: Query
   mutation: Mutation
 }
+
+type EmptyResult {
+  emptyResult: String
+}
