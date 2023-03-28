@@ -7,19 +7,18 @@ services:
       dockerfile: db.dockerfile
     ports:
       - 5432:5432
-
-  db-wait:
-    image: jwilder/dockerize
-    command: dockerize -wait tcp://db:5432 -timeout 1m
-    depends_on:
-      - db
+    healthcheck:
+      test: pg_isready
+      interval: 1s
+      retries: 10
 
   graphql:
-    image: node:16.15.1
+    image: node:18.13.0
     command: ./node_modules/.bin/tsx watch -- src/server.ts
     working_dir: /home/node/app
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     env_file:
       - env/local.env
     environment:
