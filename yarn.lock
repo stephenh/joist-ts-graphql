@@ -4635,6 +4635,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"joist-graphql-resolver-utils@npm:^1.68.0":
+  version: 1.68.0
+  resolution: "joist-graphql-resolver-utils@npm:1.68.0"
+  dependencies:
+    graphql: ^16.6.0
+    joist-orm: 1.68.0
+    joist-test-utils: 1.68.0
+  checksum: d2e634053a7275e3f4ab16ea4b10d420397037b1d9725e270e834e211cae44d13bfb1715371afba125f4df04450f5bf22b67fbb92eff9681dc07ac0f9db84fd1
+  languageName: node
+  linkType: hard
+
 "joist-migration-utils@npm:^1.68.0":
   version: 1.68.0
   resolution: "joist-migration-utils@npm:1.68.0"
@@ -4649,7 +4660,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joist-orm@npm:^1.68.0":
+"joist-orm@npm:1.68.0, joist-orm@npm:^1.68.0":
   version: 1.68.0
   resolution: "joist-orm@npm:1.68.0"
   dependencies:
@@ -4664,7 +4675,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joist-test-utils@npm:^1.68.0":
+"joist-test-utils@npm:1.68.0, joist-test-utils@npm:^1.68.0":
   version: 1.68.0
   resolution: "joist-test-utils@npm:1.68.0"
   dependencies:
@@ -4694,6 +4705,7 @@ __metadata:
     jest-jasmine2: ^29.1.2
     joist-codegen: ^1.68.0
     joist-graphql-codegen: ^1.68.0
+    joist-graphql-resolver-utils: ^1.68.0
     joist-migration-utils: ^1.68.0
     joist-orm: ^1.68.0
     joist-test-utils: ^1.68.0

@@ -42,6 +42,7 @@
     "jest-jasmine2": "^29.1.2",
     "joist-codegen": "^1.68.0",
     "joist-graphql-codegen": "^1.68.0",
+    "joist-graphql-resolver-utils": "^1.68.0",
     "joist-test-utils": "^1.68.0",
     "prettier": "^2.7.1",
     "ts-jest": "^29.0.3",

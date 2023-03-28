@@ -1,16 +1,22 @@
 import { Context } from "src/context";
-import { ID } from "src/generated/graphql-types";
 import { deleteAuthor } from "src/resolvers/mutations/author/deleteAuthorResolver";
 import { run } from "src/resolvers/testUtils";
+import { newAuthor } from "src/entities";
 
 describe("deleteAuthor", () => {
-  it("handles this business case", () => {
-    fail();
+  it.withCtx("can delete an author", async (ctx) => {
+    // Given an author
+    const { em } = ctx;
+    const a = newAuthor(em);
+    // When we delete it
+    await runDeleteAuthor(ctx, () => ({ id: a.idOrFail }));
+    // Then its deleted
+    expect(a.isDeletedEntity).toBe(true);
   });
 });
 
-async function runDeleteAuthor(ctx: Context, inputFn: () => ID) {
+async function runDeleteAuthor(ctx: Context, argFn: () => { id: string }) {
   return await run(ctx, async (ctx) => {
-    return deleteAuthor.deleteAuthor({}, { input: inputFn() }, ctx, undefined!);
+    return deleteAuthor.deleteAuthor({}, argFn(), ctx, undefined!);
   });
 }

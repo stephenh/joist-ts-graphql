@@ -7,4 +7,5 @@ module.exports = {
     "^src(.*)": "<rootDir>/src$1",
   },
   testRunner: "jest-jasmine2",
+  maxWorkers: 1,
 };
