@@ -12,6 +12,7 @@ export const authorMeta: EntityMetadata<Author> = {
   type: "Author",
   baseType: undefined,
   idType: "int",
+  idTagged: true,
   tagName: "a",
   tableName: "authors",
   fields: {
@@ -23,6 +24,7 @@ export const authorMeta: EntityMetadata<Author> = {
     "books": { kind: "o2m", fieldName: "books", fieldIdName: "bookIds", required: false, otherMetadata: () => bookMeta, otherFieldName: "author", serde: undefined, immutable: false },
   },
   allFields: {},
+  orderBy: undefined,
   timestampFields: { createdAt: "createdAt", updatedAt: "updatedAt", deletedAt: undefined },
   config: authorConfig,
   factory: newAuthor,
@@ -37,6 +39,7 @@ export const bookMeta: EntityMetadata<Book> = {
   type: "Book",
   baseType: undefined,
   idType: "int",
+  idTagged: true,
   tagName: "b",
   tableName: "books",
   fields: {
@@ -47,6 +50,7 @@ export const bookMeta: EntityMetadata<Book> = {
     "author": { kind: "m2o", fieldName: "author", fieldIdName: "authorId", required: true, otherMetadata: () => authorMeta, otherFieldName: "books", serde: new KeySerde("a", "author", "author_id", "int"), immutable: false },
   },
   allFields: {},
+  orderBy: undefined,
   timestampFields: { createdAt: "createdAt", updatedAt: "updatedAt", deletedAt: undefined },
   config: bookConfig,
   factory: newBook,

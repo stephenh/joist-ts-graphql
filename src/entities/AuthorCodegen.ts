@@ -31,6 +31,7 @@ import type { EntityManager } from "./entities";
 export type AuthorId = Flavor<string, "Author">;
 
 export interface AuthorFields {
+  id: { kind: "primitive"; type: number; unique: true; nullable: false };
   firstName: { kind: "primitive"; type: string; unique: false; nullable: never };
   lastName: { kind: "primitive"; type: string; unique: false; nullable: undefined };
   createdAt: { kind: "primitive"; type: Date; unique: false; nullable: never };
@@ -92,7 +93,7 @@ export abstract class AuthorCodegen extends BaseEntity<EntityManager> {
     factoryOptsType: Parameters<typeof newAuthor>[1];
   };
 
-  readonly books: Collection<Author, Book> = hasMany(bookMeta, "books", "author", "author_id");
+  readonly books: Collection<Author, Book> = hasMany(bookMeta, "books", "author", "author_id", undefined);
 
   constructor(em: EntityManager, opts: AuthorOpts) {
     super(em, authorMeta, AuthorCodegen.defaultValues, opts);
