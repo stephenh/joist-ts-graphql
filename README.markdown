@@ -11,7 +11,7 @@ There are no examples of business logic or Joist's various features; for those s
 
 - `yarn i`
 - `docker-compose up -d db`
-- `yarn joist-migrate`
+- `yarn pg-migrate`
 - `yarn joist-codegen` (if you've made migration/schema changes)
 - `yarn test`
 
@@ -26,7 +26,7 @@ A typical workflow for adding a new entity looks like:
     name: { type: "text", notNull: true },
   });
   ```
-- Run `npm run joist-migrate`
+- Run `npm run pg-migrate`
   - If you change your migration, and want to re-apply it from scratch, run `docker-compose exec db ./reset.sh`
 - Run `npm run joist-codegen`
 - Copy/paste the `Author.test.ts` and write a test for `Publisher`
@@ -54,7 +54,7 @@ TODO: Automate this with more, probably with mrm.
 - Copy/paste `env/local.env`, changed port
 - Add `ts-node` to `package.json`
   - Should come from `mrm`?
-- Add `joist-migrate` script, run it
+- Add `pg-migrate` script, run it
 - Add `joist-codegen` script, run it
 - Add `Author.test.ts`
 - Add `dotenv` to `package.json`

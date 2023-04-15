@@ -2,9 +2,9 @@
   "name": "joist-ts-sample",
   "scripts": {
     "test": "jest",
-    "joist-migrate": "./run.sh ./node_modules/joist-migration-utils",
+    "pg-migrate": "./run.sh ./node_modules/joist-migration-utils",
     "joist-codegen": "./run.sh ./node_modules/joist-codegen",
-    "joist-new-migration": "npx node-pg-migrate create",
+    "pg-new-migration": "node-pg-migrate create --template-file-name=migrations/.template.ts",
     "graphql-codegen": "graphql-codegen --config graphql-codegen.js",
     "format": "prettier --write 'src/**/*.{ts,js,tsx,jsx}'",
     "build": "tsc"
