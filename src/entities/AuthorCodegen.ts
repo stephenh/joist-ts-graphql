@@ -20,6 +20,7 @@ import {
   OptsOf,
   OrderBy,
   PartialOrNull,
+  PersistedAsyncProperty,
   setField,
   setOpts,
   ValueFilter,
@@ -36,6 +37,7 @@ export interface AuthorFields {
   lastName: { kind: "primitive"; type: string; unique: false; nullable: undefined };
   createdAt: { kind: "primitive"; type: Date; unique: false; nullable: never };
   updatedAt: { kind: "primitive"; type: Date; unique: false; nullable: never };
+  numberOfReviews: { kind: "primitive"; type: number; unique: false; nullable: never };
 }
 
 export interface AuthorOpts {
@@ -54,6 +56,7 @@ export interface AuthorFilter {
   lastName?: ValueFilter<string, null>;
   createdAt?: ValueFilter<Date, never>;
   updatedAt?: ValueFilter<Date, never>;
+  numberOfReviews?: ValueFilter<number, never>;
   books?: EntityFilter<Book, BookId, FilterOf<Book>, null | undefined>;
 }
 
@@ -63,6 +66,7 @@ export interface AuthorGraphQLFilter {
   lastName?: ValueGraphQLFilter<string>;
   createdAt?: ValueGraphQLFilter<Date>;
   updatedAt?: ValueGraphQLFilter<Date>;
+  numberOfReviews?: ValueGraphQLFilter<number>;
   books?: EntityGraphQLFilter<Book, BookId, FilterOf<Book>, null | undefined>;
 }
 
@@ -72,6 +76,7 @@ export interface AuthorOrder {
   lastName?: OrderBy;
   createdAt?: OrderBy;
   updatedAt?: OrderBy;
+  numberOfReviews?: OrderBy;
 }
 
 export const authorConfig = new ConfigApi<Author, {}>();
@@ -79,6 +84,7 @@ export const authorConfig = new ConfigApi<Author, {}>();
 authorConfig.addRule(newRequiredRule("firstName"));
 authorConfig.addRule(newRequiredRule("createdAt"));
 authorConfig.addRule(newRequiredRule("updatedAt"));
+authorConfig.addRule(newRequiredRule("numberOfReviews"));
 
 export abstract class AuthorCodegen extends BaseEntity<EntityManager> {
   static defaultValues: object = {};
@@ -139,6 +145,8 @@ export abstract class AuthorCodegen extends BaseEntity<EntityManager> {
   get updatedAt(): Date {
     return this.__orm.data["updatedAt"];
   }
+
+  abstract readonly numberOfReviews: PersistedAsyncProperty<Author, number>;
 
   set(opts: Partial<AuthorOpts>): void {
     setOpts(this as any as Author, opts);

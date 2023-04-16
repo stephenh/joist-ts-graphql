@@ -1,15 +1,19 @@
 import { GraphQLResolveInfo } from "graphql";
 import { Context } from "src/context";
-import { Author, Book } from "src/entities";
+import { Author, Book, BookReview, Reviewer } from "src/entities";
 
 export interface Resolvers {
   Author: AuthorResolvers;
   Book: BookResolvers;
+  BookReview: BookReviewResolvers;
   Mutation: MutationResolvers;
   Query: QueryResolvers;
+  Reviewer: ReviewerResolvers;
   EmptyResult?: EmptyResultResolvers;
   SaveAuthorResult?: SaveAuthorResultResolvers;
   SaveBookResult?: SaveBookResultResolvers;
+  SaveBookReviewResult?: SaveBookReviewResultResolvers;
+  SaveReviewerResult?: SaveReviewerResultResolvers;
 }
 
 export type UnionResolvers = {};
@@ -24,18 +28,36 @@ export interface AuthorResolvers {
 export interface BookResolvers {
   author: Resolver<Book, {}, Author>;
   id: Resolver<Book, {}, string>;
+  reviews: Resolver<Book, {}, readonly BookReview[]>;
   title: Resolver<Book, {}, string>;
+}
+
+export interface BookReviewResolvers {
+  book: Resolver<BookReview, {}, Book>;
+  id: Resolver<BookReview, {}, string>;
+  rating: Resolver<BookReview, {}, number>;
+  reviewer: Resolver<BookReview, {}, Reviewer>;
 }
 
 export interface MutationResolvers {
   deleteAuthor: Resolver<{}, MutationDeleteAuthorArgs, EmptyResult | null | undefined>;
   saveAuthor: Resolver<{}, MutationSaveAuthorArgs, SaveAuthorResult>;
   saveBook: Resolver<{}, MutationSaveBookArgs, SaveBookResult>;
+  saveBookReview: Resolver<{}, MutationSaveBookReviewArgs, SaveBookReviewResult>;
+  saveReviewer: Resolver<{}, MutationSaveReviewerArgs, SaveReviewerResult>;
 }
 
 export interface QueryResolvers {
   author: Resolver<{}, QueryAuthorArgs, Author>;
+  authors: Resolver<{}, {}, readonly Author[]>;
   testQuery: Resolver<{}, QueryTestQueryArgs, number>;
+}
+
+export interface ReviewerResolvers {
+  age: Resolver<Reviewer, {}, number>;
+  bookReviews: Resolver<Reviewer, {}, readonly BookReview[]>;
+  id: Resolver<Reviewer, {}, string>;
+  name: Resolver<Reviewer, {}, string>;
 }
 
 export interface EmptyResultResolvers {
@@ -48,6 +70,14 @@ export interface SaveAuthorResultResolvers {
 
 export interface SaveBookResultResolvers {
   book: Resolver<SaveBookResult, {}, Book>;
+}
+
+export interface SaveBookReviewResultResolvers {
+  bookReview: Resolver<SaveBookReviewResult, {}, BookReview>;
+}
+
+export interface SaveReviewerResultResolvers {
+  reviewer: Resolver<SaveReviewerResult, {}, Reviewer>;
 }
 
 type MaybePromise<T> = T | Promise<T>;
@@ -72,6 +102,12 @@ export interface MutationSaveAuthorArgs {
 export interface MutationSaveBookArgs {
   input: SaveBookInput;
 }
+export interface MutationSaveBookReviewArgs {
+  input: SaveBookReviewInput;
+}
+export interface MutationSaveReviewerArgs {
+  input: SaveReviewerInput;
+}
 export interface QueryAuthorArgs {
   id: string;
 }
@@ -90,6 +126,14 @@ export interface SaveBookResult {
   book: Book;
 }
 
+export interface SaveBookReviewResult {
+  bookReview: BookReview;
+}
+
+export interface SaveReviewerResult {
+  reviewer: Reviewer;
+}
+
 export interface SaveAuthorInput {
   firstName?: string | null | undefined;
   id?: string | null | undefined;
@@ -102,4 +146,17 @@ export interface SaveBookInput {
   title?: string | null | undefined;
 }
 
-export const possibleTypes = {} as const;
+export interface SaveBookReviewInput {
+  bookId?: string | null | undefined;
+  id?: string | null | undefined;
+  rating?: number | null | undefined;
+  reviewerId?: string | null | undefined;
+}
+
+export interface SaveReviewerInput {
+  age?: number | null | undefined;
+  id?: string | null | undefined;
+  name?: string | null | undefined;
+}
+
+export const possibleTypes = {};

@@ -1,0 +1,22 @@
+extend type Mutation {
+  saveBookReview(input: SaveBookReviewInput!): SaveBookReviewResult!
+}
+
+type BookReview {
+  id: ID!
+  rating: Int!
+  book: Book!
+  reviewer: Reviewer!
+  isPublic: Boolean!
+}
+
+input SaveBookReviewInput {
+  id: ID
+  rating: Int
+  bookId: ID
+  reviewerId: ID
+}
+
+type SaveBookReviewResult {
+  bookReview: BookReview!
+}

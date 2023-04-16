@@ -1,0 +1,20 @@
+extend type Mutation {
+  saveReviewer(input: SaveReviewerInput!): SaveReviewerResult!
+}
+
+type Reviewer {
+  id: ID!
+  name: String!
+  age: Int!
+  bookReviews: [BookReview!]!
+}
+
+input SaveReviewerInput {
+  id: ID
+  name: String
+  age: Int
+}
+
+type SaveReviewerResult {
+  reviewer: Reviewer!
+}

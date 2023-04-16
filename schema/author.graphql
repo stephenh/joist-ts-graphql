@@ -1,4 +1,5 @@
 extend type Query {
+  authors: [Author!]!
   author(id: ID!): Author!
 }
 
@@ -12,12 +13,15 @@ type Author {
   firstName: String!
   lastName: String
   books: [Book!]!
+  publicReviews: [BookReview!]!
+  numberOfReviews: Int!
 }
 
 input SaveAuthorInput {
   id: ID
   firstName: String
   lastName: String
+  numberOfReviews: Int
 }
 
 type SaveAuthorResult {
