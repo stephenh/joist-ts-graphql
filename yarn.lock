@@ -4984,28 +4984,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joist-codegen@npm:1.73.2, joist-codegen@npm:^1.73.2":
-  version: 1.73.2
-  resolution: "joist-codegen@npm:1.73.2"
+"joist-codegen@npm:1.74.0, joist-codegen@npm:^1.74.0":
+  version: 1.74.0
+  resolution: "joist-codegen@npm:1.74.0"
   dependencies:
     "@dprint/formatter": ^0.2.0
     "@dprint/json": 0.15.6
     "@types/pluralize": 0.0.29
     change-case: ^4.1.2
     is-plain-object: ^5.0.0
-    joist-utils: 1.73.2
+    joist-utils: 1.74.0
     knex: ^2.3.0
     pg: ^8.8.0
     pg-structure: ^7.13.1
     pluralize: ^8.0.0
     ts-poet: ^6.3.0
-  checksum: d078d7e0183b79c5f8a8733722cfaba6bf3dc4b09359bfbea7782ed7e33c190955d29336f79c14e692d1949debf11e85288bbac58ddbd52bd6078862f52922f9
+  checksum: 157562c692d425ad810201dafcd3dad6b0f6fa37c6c85be9b78789e4eb80b4c455c5fd2521935e1efebf81b83ce9b258daf351d6cad03b6e75249ff52a991e9b
   languageName: node
   linkType: hard
 
-"joist-graphql-codegen@npm:^1.73.2":
-  version: 1.73.2
-  resolution: "joist-graphql-codegen@npm:1.73.2"
+"joist-graphql-codegen@npm:^1.74.0":
+  version: 1.74.0
+  resolution: "joist-graphql-codegen@npm:1.74.0"
   dependencies:
     "@dprint/formatter": ^0.2.0
     "@dprint/json": 0.15.6
@@ -5013,61 +5013,61 @@ __metadata:
     change-case: ^4.1.2
     graphql: ^16.6.0
     is-plain-object: ^5.0.0
-    joist-codegen: 1.73.2
-    joist-utils: 1.73.2
+    joist-codegen: 1.74.0
+    joist-utils: 1.74.0
     pluralize: ^8.0.0
     prettier: ^2.8.1
     ts-poet: ^6.3.0
-  checksum: 21fb660dbe6e8dd915fa79bbd8f0ddab08412ce7536f9e8cd6ad5b749a6bb79410a8fb9d881e55a7460dea3f7ab9e436b941132e61f45060439fefeec9ee61ce
+  checksum: 26aa12c17336568f4466c6ef7959e60233c5e1bce5f259f19803ed0220e6c738a625b625aa0ce3aca650d085ce7c372abbcef6bbc5c4f8fddda801938bd2a013
   languageName: node
   linkType: hard
 
-"joist-graphql-resolver-utils@npm:^1.73.2":
-  version: 1.73.2
-  resolution: "joist-graphql-resolver-utils@npm:1.73.2"
+"joist-graphql-resolver-utils@npm:^1.74.0":
+  version: 1.74.0
+  resolution: "joist-graphql-resolver-utils@npm:1.74.0"
   dependencies:
     graphql: ^16.6.0
-    joist-orm: 1.73.2
-    joist-test-utils: 1.73.2
-  checksum: 7d78f60a97019002f5b2c3070bf0ebabd0dcdc19d22ccad6e177660fafac137ee51e63b457828ba1d95afe05e8c69a2eee29477d4e6b86cd50200f89ac05295d
+    joist-orm: 1.74.0
+    joist-test-utils: 1.74.0
+  checksum: 8488b20ac1bc1412c2530e5b1a1ef90a9289bf01bcae8fd50d877ee6c3b9c6a08dce9c65ef7c79ff19b06c8b5a065d7a5f4479f944f4e89a8ca509aa7e1c86a7
   languageName: node
   linkType: hard
 
-"joist-migration-utils@npm:^1.73.2":
-  version: 1.73.2
-  resolution: "joist-migration-utils@npm:1.73.2"
+"joist-migration-utils@npm:^1.74.0":
+  version: 1.74.0
+  resolution: "joist-migration-utils@npm:1.74.0"
   dependencies:
     "@types/pluralize": 0.0.29
-    joist-utils: 1.73.2
+    joist-utils: 1.74.0
     node-pg-migrate: ^6.2.2
     pg: ^8.8.0
     pg-structure: ^7.13.1
     pluralize: ^8.0.0
-  checksum: 3b8d75dceff1db4bb44b874d6a7efba803d62958bc9efd64b3a0965f080a985a5ff1127776ea721a64c42abb635082f1abc66e81f041f5f2daf0c34f66e65eff
+  checksum: de638baa8bf31991d31eb7b0f4fac8fc2fab3d9e59484ff16927fa66ae09e11d93b36504825444f52decbf340f87bc5bcdcd27bc7564f82811b626b1315731d5
   languageName: node
   linkType: hard
 
-"joist-orm@npm:1.73.2, joist-orm@npm:^1.73.2":
-  version: 1.73.2
-  resolution: "joist-orm@npm:1.73.2"
+"joist-orm@npm:1.74.0, joist-orm@npm:^1.74.0":
+  version: 1.74.0
+  resolution: "joist-orm@npm:1.74.0"
   dependencies:
     "@types/object-hash": ^2.2.1
     dataloader: ^2.1.0
     is-plain-object: ^5.0.0
-    joist-utils: 1.73.2
+    joist-utils: 1.74.0
     knex: ^2.3.0
     object-hash: ^3.0.0
     pg: ^8.8.0
-  checksum: 490a3763baa8b7326085d56014b26f0fcb6d8558bb9c45ba73b06009948d23125435d26945bdd87402f34b7efa2dbe42c2b359e266a5949e8d535f2e583b60df
+  checksum: 417f821b53e43d12895c2b64f39180cb3be74b53a14e65b8ce3159971e552aed436aedc4dc990ada186ca5765bd4850a56b842baa0dd09c7139071ce7a0dc03f
   languageName: node
   linkType: hard
 
-"joist-test-utils@npm:1.73.2, joist-test-utils@npm:^1.73.2":
-  version: 1.73.2
-  resolution: "joist-test-utils@npm:1.73.2"
+"joist-test-utils@npm:1.74.0, joist-test-utils@npm:^1.74.0":
+  version: 1.74.0
+  resolution: "joist-test-utils@npm:1.74.0"
   dependencies:
     is-plain-object: ^5.0.0
-  checksum: 9ed3680c3d2746811d4ff32880e3f0e8ab1a2205c813d8d512319762bffed9ff4a0cc2d0f62489cd70fd3b852d04dada06d2bb247484cb85d52d8ac159361cce
+  checksum: 997ddd437736a5d8b02ef4566cb249f26722e5b6dee7435c6eb8ef497d51eff32901186113ff28678d1ff97d61058e013d5e8856a58b5bb05b219cd9dd6073e3
   languageName: node
   linkType: hard
 
@@ -5090,12 +5090,12 @@ __metadata:
     graphql: 16.6.0
     jest: ^29.5.0
     jest-jasmine2: ^29.5.0
-    joist-codegen: ^1.73.2
-    joist-graphql-codegen: ^1.73.2
-    joist-graphql-resolver-utils: ^1.73.2
-    joist-migration-utils: ^1.73.2
-    joist-orm: ^1.73.2
-    joist-test-utils: ^1.73.2
+    joist-codegen: ^1.74.0
+    joist-graphql-codegen: ^1.74.0
+    joist-graphql-resolver-utils: ^1.74.0
+    joist-migration-utils: ^1.74.0
+    joist-orm: ^1.74.0
+    joist-test-utils: ^1.74.0
     mercurius: ^12.2.0
     node-pg-migrate: ^5.9.0
     prettier: ^2.8.7
@@ -5105,13 +5105,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"joist-utils@npm:1.73.2":
-  version: 1.73.2
-  resolution: "joist-utils@npm:1.73.2"
+"joist-utils@npm:1.74.0":
+  version: 1.74.0
+  resolution: "joist-utils@npm:1.74.0"
   dependencies:
     pg: ^8.8.0
     pg-connection-string: ^2.5.0
-  checksum: 656bc9c5e3110caa773c55378973d51042c101aeab1a87cc51fbc2b9817439812ef5e63088caf2cb0954761869e95dc75c3b3fa0d2211d449bb5efcf086e2936
+  checksum: e30c3663d964d499a8d319109a8751e1ba55bf8ee590d3c51ca92bcfefdd29cc4442bb02d21f8b460bc96e40db357d0cbf9b9da6b7d087154485be76e0bf5b6e
   languageName: node
   linkType: hard
 
