@@ -7,7 +7,7 @@ import { GraphqlPlugin } from "src/endpoints/graphql";
 async function startServer(context: AppContext) {
   const app = await createApp(context);
   await app.listen({ host: "0.0.0.0", port: 4000 });
-  console.log(`Server ready at http://localhost:4000/playground`);
+  console.log(`Server ready at http://localhost:4000/graphiql`);
 }
 
 declare module "fastify" {
