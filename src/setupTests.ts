@@ -51,4 +51,8 @@ export function resetQueries() {
   queries = [];
 }
 
+export async function select(tableName: string): Promise<readonly any[]> {
+  return (await getAppContext()).knex.select("*").from(tableName).orderBy("id");
+}
+
 expect.extend({ toMatchEntity });
