@@ -1,9 +1,15 @@
 {
-  "Author": ["books", "createdAt", "firstName", "id", "lastName", "updatedAt"],
-  "Book": ["author", "createdAt", "id", "title", "updatedAt"],
-  "Mutation": ["saveAuthor", "saveBook"],
-  "SaveAuthorInput": ["firstName", "id", "lastName"],
+  "Author": ["books", "createdAt", "firstName", "id", "lastName", "numberOfReviews", "updatedAt"],
+  "Book": ["author", "createdAt", "id", "reviews", "title", "updatedAt"],
+  "BookReview": ["book", "createdAt", "id", "rating", "reviewer", "updatedAt"],
+  "Mutation": ["saveAuthor", "saveBook", "saveBookReview", "saveReviewer"],
+  "Reviewer": ["age", "bookReviews", "createdAt", "id", "name", "updatedAt"],
+  "SaveAuthorInput": ["firstName", "id", "lastName", "numberOfReviews"],
   "SaveAuthorResult": ["author"],
   "SaveBookInput": ["authorId", "id", "title"],
-  "SaveBookResult": ["book"]
+  "SaveBookResult": ["book"],
+  "SaveBookReviewInput": ["bookId", "id", "rating", "reviewerId"],
+  "SaveBookReviewResult": ["bookReview"],
+  "SaveReviewerInput": ["age", "id", "name"],
+  "SaveReviewerResult": ["reviewer"]
 }

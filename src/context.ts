@@ -27,5 +27,9 @@ export async function newAppContext(): Promise<AppContext> {
 }
 
 function createKnex(): Knex {
-  return knex({ client: "pg", connection: newPgConnectionConfig(), debug: false });
+  return knex({
+    client: "pg",
+    connection: newPgConnectionConfig(),
+    debug: false,
+  });
 }

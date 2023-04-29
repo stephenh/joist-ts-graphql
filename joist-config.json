@@ -1,5 +1,10 @@
 {
   "codegenPlugins": ["joist-graphql-codegen"],
-  "entities": { "Author": { "tag": "a" }, "Book": { "tag": "b" } },
+  "entities": {
+    "Author": { "fields": { "numberOfReviews": { "derived": "async" } }, "tag": "a" },
+    "Book": { "tag": "b" },
+    "BookReview": { "tag": "br" },
+    "Reviewer": { "tag": "r" }
+  },
   "entitiesDirectory": "./src/entities"
 }
