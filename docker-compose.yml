@@ -14,7 +14,7 @@ services:
 
   graphql:
     image: node:18.13.0
-    command: ./node_modules/.bin/tsx watch -- src/server.ts
+    command: yarn tsx watch --clear-screen=false --inspect=0.0.0.0:9229 src/server.ts
     working_dir: /home/node/app
     depends_on:
       db:
