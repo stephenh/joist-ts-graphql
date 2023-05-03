@@ -35,6 +35,7 @@ export interface MutationResolvers {
 
 export interface QueryResolvers {
   author: Resolver<{}, QueryAuthorArgs, Author>;
+  books: Resolver<{}, {}, readonly Book[]>;
   testQuery: Resolver<{}, QueryTestQueryArgs, number>;
 }
 
@@ -102,4 +103,4 @@ export interface SaveBookInput {
   title?: string | null | undefined;
 }
 
-export const possibleTypes = {} as const;
+export const possibleTypes = {};
