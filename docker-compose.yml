@@ -20,7 +20,7 @@ services:
       db:
         condition: service_healthy
     env_file:
-      - env/local.env
+      - .env
     environment:
       - DATABASE_URL=postgres://sample_user:local@db:5432/sample_app
     volumes:

@@ -1,5 +1,5 @@
-import { config } from "dotenv";
+import { GetEnvVars } from "env-cmd";
 
-export default () => {
-  config({ path: "./env/local.env" });
+export default async () => {
+  Object.entries(await GetEnvVars()).forEach(([key, value]) => (process.env[key] = value));
 };
