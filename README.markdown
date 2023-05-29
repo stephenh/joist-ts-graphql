@@ -50,9 +50,8 @@ TODO: Automate this with more, probably with mrm.
 
 - Copy/paste `migrations/...author.ts`
 - Add `joist-orm`, `joist-migration-utils`, `joist-codegen` to `package.json`
-- Copy/paste `run.sh`
-- Copy/paste `env/local.env`, changed port
-- Add `ts-node` to `package.json`
+- Copy/paste `.env`, changed port
+- Add `tsx`, `env-cmd` to `package.json`
   - Should come from `mrm`?
 - Add `pg-migrate` script, run it
 - Add `joist-codegen` script, run it
