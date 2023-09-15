@@ -1,9 +1,11 @@
 import {
   BaseEntity,
   Changes,
+  cleanStringValue,
   ConfigApi,
   EntityFilter,
   EntityGraphQLFilter,
+  EntityMetadata,
   EntityOrmField,
   fail,
   FilterOf,
@@ -29,7 +31,7 @@ import {
 import { Author, AuthorId, authorMeta, AuthorOrder, Book, bookMeta, newBook } from "./entities";
 import type { EntityManager } from "./entities";
 
-export type BookId = Flavor<string, "Book">;
+export type BookId = Flavor<string, Book>;
 
 export interface BookFields {
   id: { kind: "primitive"; type: number; unique: true; nullable: false };
@@ -81,6 +83,8 @@ bookConfig.addRule(newRequiredRule("author"));
 
 export abstract class BookCodegen extends BaseEntity<EntityManager> {
   static defaultValues: object = {};
+  static readonly tagName = "b";
+  static readonly metadata: EntityMetadata<Book>;
 
   declare readonly __orm: EntityOrmField & {
     filterType: BookFilter;
@@ -120,7 +124,7 @@ export abstract class BookCodegen extends BaseEntity<EntityManager> {
   }
 
   set title(title: string) {
-    setField(this, "title", title);
+    setField(this, "title", cleanStringValue(title));
   }
 
   get createdAt(): Date {
