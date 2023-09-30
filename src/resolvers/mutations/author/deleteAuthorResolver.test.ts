@@ -9,7 +9,7 @@ describe("deleteAuthor", () => {
     const { em } = ctx;
     const a = newAuthor(em);
     // When we delete it
-    await runDeleteAuthor(ctx, () => ({ id: a.idOrFail }));
+    await runDeleteAuthor(ctx, () => ({ id: a.id }));
     // Then its deleted
     expect(a.isDeletedEntity).toBe(true);
   });

@@ -10,9 +10,9 @@ describe("saveBook", () => {
     const a1 = newAuthor(em);
     const result = await runSaveBook(ctx, () => ({
       title: "b2",
-      authorId: a1.idOrFail,
+      authorId: a1.id,
     }));
-    await expect(result.book).toMatchEntity({
+    expect(result.book).toMatchEntity({
       title: "b2",
       author: a1,
     });

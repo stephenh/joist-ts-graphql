@@ -442,43 +442,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dprint/typescript@npm:^0.71.2":
-  version: 0.71.2
-  resolution: "@dprint/typescript@npm:0.71.2"
-  checksum: c0ffe4bbf3d000e84d7339830d2e4ffbb9386227f62ade6b692e15401bebf188e9833e10d3b5d6625e807d7db02054b746e478acc686227d9c1ea878391ec707
-  languageName: node
-  linkType: hard
-
-"@esbuild-kit/cjs-loader@npm:^2.4.2":
-  version: 2.4.2
-  resolution: "@esbuild-kit/cjs-loader@npm:2.4.2"
-  dependencies:
-    "@esbuild-kit/core-utils": ^3.0.0
-    get-tsconfig: ^4.4.0
-  checksum: e346e339bfc7eff5c52c270fd0ec06a7f2341b624adfb69f84b7d83f119c35070420906f2761a0b4604e0a0ec90e35eaf12544585476c428ed6d6ee3b250c0fe
-  languageName: node
-  linkType: hard
-
-"@esbuild-kit/core-utils@npm:^3.0.0, @esbuild-kit/core-utils@npm:^3.3.0":
-  version: 3.3.1
-  resolution: "@esbuild-kit/core-utils@npm:3.3.1"
-  dependencies:
-    esbuild: ~0.18.20
-    source-map-support: ^0.5.21
-  checksum: a176d226af59cdd4e034d6dd8c264d75a0056b9b47e4ccd5035684e348d25ad6bf345f87ce84f4a972dd318900c060806dc4d0bfeaf700f70f65d235dd93b610
-  languageName: node
-  linkType: hard
-
-"@esbuild-kit/esm-loader@npm:^2.6.3":
-  version: 2.6.4
-  resolution: "@esbuild-kit/esm-loader@npm:2.6.4"
-  dependencies:
-    "@esbuild-kit/core-utils": ^3.3.0
-    get-tsconfig: ^4.7.0
-  checksum: 0f522f2eee04485a3a97317c7dc72f4fc42e1eb3c7c1933d4c062ecdf9b454f8652a43949a8246dc4d85df61ff66daf08f4cfc4a98ff529fc500d06691a0c475
-  languageName: node
-  linkType: hard
-
 "@esbuild/android-arm64@npm:0.18.20":
   version: 0.18.20
   resolution: "@esbuild/android-arm64@npm:0.18.20"
@@ -770,22 +733,6 @@ __metadata:
   peerDependencies:
     graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
   checksum: 9824a5ec26fe25379f64e4ea94402487acde2a880d6bfcbd55ac9f0681c887a814fd9093cc789e09273108b7ea6df0c04fc8acc8dd55eab3918d0d07af62dffd
-  languageName: node
-  linkType: hard
-
-"@graphql-codegen/plugin-helpers@npm:^2.6.2":
-  version: 2.7.0
-  resolution: "@graphql-codegen/plugin-helpers@npm:2.7.0"
-  dependencies:
-    "@graphql-tools/utils": ^8.8.0
-    change-case-all: 1.0.14
-    common-tags: 1.8.2
-    import-from: 4.0.0
-    lodash: ~4.17.0
-    tslib: ~2.4.0
-  peerDependencies:
-    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: 413099d58e99d4eb3a7d806f3b7eb5c7052e40a680cc2e9ced11eb0b8af0aede8a3fdcdeca937daf89614b6db9cf0a9235ad6f694d211f097c40c1cbf07b3c6a
   languageName: node
   linkType: hard
 
@@ -1123,17 +1070,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/utils@npm:^8.8.0":
-  version: 8.12.0
-  resolution: "@graphql-tools/utils@npm:8.12.0"
-  dependencies:
-    tslib: ^2.4.0
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 24edc6ba3bcfa9a4c1d1d37117c3f96d847beed9638325083c32c6ec9674729dc89fc8cc389d317ae5d9dba22e91443bd9788f1dc8de91a1b6f1e592112bd48f
-  languageName: node
-  linkType: hard
-
 "@graphql-tools/wrap@npm:^10.0.0":
   version: 10.0.1
   resolution: "@graphql-tools/wrap@npm:10.0.1"
@@ -1158,45 +1094,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@homebound/graphql-typescript-possible-types@npm:^2.14.0":
-  version: 2.14.0
-  resolution: "@homebound/graphql-typescript-possible-types@npm:2.14.0"
+"@homebound/graphql-typescript-possible-types@npm:^2.17.0":
+  version: 2.17.0
+  resolution: "@homebound/graphql-typescript-possible-types@npm:2.17.0"
   dependencies:
-    "@graphql-codegen/plugin-helpers": ^2.6.2
+    "@graphql-codegen/plugin-helpers": ^5.0.1
     change-case: ^4.1.2
-    ts-poet: ^5.0.1
-  checksum: 0c502188372905f7c604d4aa0aff4e7a7d4bb466e322944ffef8974e83c640cd300f464d4579b239fab22736c3ec9df4ce9d72e93d61930d7b2ba09207bfe4fd
+    ts-poet: ^6.6.0
+  checksum: 886d10c80cfd47c7e44131629729f2f9435edb88567ea1f7fdf268de89a9048098772ac984c1ddf32df00ddd96770bd19b9ba6750a3c3d614626e6d8d77d4685
   languageName: node
   linkType: hard
 
-"@homebound/graphql-typescript-resolver-scaffolding@npm:^1.36.0":
-  version: 1.36.0
-  resolution: "@homebound/graphql-typescript-resolver-scaffolding@npm:1.36.0"
+"@homebound/graphql-typescript-resolver-scaffolding@npm:^1.39.0":
+  version: 1.39.0
+  resolution: "@homebound/graphql-typescript-resolver-scaffolding@npm:1.39.0"
   dependencies:
-    "@graphql-codegen/plugin-helpers": ^2.6.2
+    "@graphql-codegen/plugin-helpers": ^5.0.1
     change-case: ^4.1.2
-    ts-poet: ^5.0.1
-  checksum: 166a16d8abc800f966b48300e9eb2406040c1aeba8c6e669d213297a15c78a993bee766c2ef7e661348dbccd46c4b8eeeb68b091f77bdf4eb8bc4903cba74300
+    ts-poet: ^6.6.0
+  checksum: 713401266dd2715c81382ba5191ea689c31a4d1bbca64d341256a3444f642f8048eebe371e67039a86c76c9a95f911a726f57aabbadb93b8d3269f8fa1d65ae1
   languageName: node
   linkType: hard
 
-"@homebound/graphql-typescript-simple-resolvers@npm:^1.48.0":
-  version: 1.48.0
-  resolution: "@homebound/graphql-typescript-simple-resolvers@npm:1.48.0"
+"@homebound/graphql-typescript-simple-resolvers@npm:^1.51.0":
+  version: 1.51.0
+  resolution: "@homebound/graphql-typescript-simple-resolvers@npm:1.51.0"
   dependencies:
-    "@graphql-codegen/plugin-helpers": ^2.6.2
-    change-case: ^4.1.1
-    ts-poet: ^5.0.1
-  checksum: 741f277445f119af5efb3e42d53825e12ede01e797dfcd20839cc9c3b6b0eb215b1aa243657b48d240b71526dda031077d2cdb33a95126749f7768834eb510c7
+    "@graphql-codegen/plugin-helpers": ^5.0.1
+    change-case: ^4.1.2
+    ts-poet: ^6.6.0
+  checksum: ee69a2439eb685e048fc6b4371feb16767b354af527619c32b90281467979aae5e476ac1c7dede676537ee55d79064cecafcb168573c52a37c22f5e132cace01
   languageName: node
   linkType: hard
 
-"@homebound/tsconfig@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@homebound/tsconfig@npm:1.1.0"
+"@homebound/tsconfig@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@homebound/tsconfig@npm:1.1.1"
   dependencies:
     "@tsconfig/recommended": ^1.0.1
-  checksum: 52638b111e7d18c33bfdd2639a112db41b1bb8c7cd4b15fe99a501f2ad35e4d3a74b91ab4191274e613eced58fa7e022ac112147c137ebe7117fbf0174b7603c
+  checksum: 2094f178c6116f4729c5980b633858f1150d5ca54d9dc25a1179d4f35ee4904b8e9bc19d7f8b4f14cbcf2c528aa68b1b3f0cbfabd535116e568b84f714d77e58
   languageName: node
   linkType: hard
 
@@ -2386,24 +2322,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"change-case-all@npm:1.0.14":
-  version: 1.0.14
-  resolution: "change-case-all@npm:1.0.14"
-  dependencies:
-    change-case: ^4.1.2
-    is-lower-case: ^2.0.2
-    is-upper-case: ^2.0.2
-    lower-case: ^2.0.2
-    lower-case-first: ^2.0.2
-    sponge-case: ^1.0.1
-    swap-case: ^2.0.2
-    title-case: ^3.0.3
-    upper-case: ^2.0.2
-    upper-case-first: ^2.0.2
-  checksum: 6ff893e005e1bf115cc2969cc5ca3610f7c6ece9e90b7927ed12c980c7d3ea9a565150d246c6dba0fee21aaacbd38d69b98a4670d96b892c76f66e46616506d3
-  languageName: node
-  linkType: hard
-
 "change-case-all@npm:1.0.15":
   version: 1.0.15
   resolution: "change-case-all@npm:1.0.15"
@@ -2422,7 +2340,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"change-case@npm:^4.1.1, change-case@npm:^4.1.2":
+"change-case@npm:^4.1.2":
   version: 4.1.2
   resolution: "change-case@npm:4.1.2"
   dependencies:
@@ -3402,7 +3320,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@npm:^2.3.2, fsevents@npm:~2.3.2":
+"fsevents@npm:^2.3.2":
   version: 2.3.2
   resolution: "fsevents@npm:2.3.2"
   dependencies:
@@ -3412,9 +3330,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
+"fsevents@npm:~2.3.3":
+  version: 2.3.3
+  resolution: "fsevents@npm:2.3.3"
+  dependencies:
+    node-gyp: latest
+  checksum: 11e6ea6fea15e42461fc55b4b0e4a0a3c654faa567f1877dbd353f39156f69def97a69936d1746619d656c4b93de2238bf731f6085a03a50cabf287c9d024317
+  conditions: os=darwin
+  languageName: node
+  linkType: hard
+
+"fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
   resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  dependencies:
+    node-gyp: latest
+  conditions: os=darwin
+  languageName: node
+  linkType: hard
+
+"fsevents@patch:fsevents@~2.3.3#~builtin<compat/fsevents>":
+  version: 2.3.3
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.3#~builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -3481,12 +3418,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-tsconfig@npm:^4.4.0, get-tsconfig@npm:^4.7.0":
-  version: 4.7.0
-  resolution: "get-tsconfig@npm:4.7.0"
+"get-tsconfig@npm:^4.7.2":
+  version: 4.7.2
+  resolution: "get-tsconfig@npm:4.7.2"
   dependencies:
     resolve-pkg-maps: ^1.0.0
-  checksum: 44536925720acc2f133d26301d5626405d8fe33066625484ff309bb6fb7f3310dc0bb202f862805f21a791e38a9870c6dddb013d1443dd5d745d91ad1946254a
+  checksum: 172358903250eff0103943f816e8a4e51d29b8e5449058bdf7266714a908a48239f6884308bd3a6ff28b09f692b9533dbebfd183ab63e4e14f073cda91f1bca9
   languageName: node
   linkType: hard
 
@@ -3624,10 +3561,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:16.8.0, graphql@npm:^16.8.0":
-  version: 16.8.0
-  resolution: "graphql@npm:16.8.0"
-  checksum: d853d4085b0c911a7e2a926c3b0d379934ec61cd4329e70cdf281763102f024fd80a97db7a505b8b04fed9050cb4875f8f518150ea854557a500a0b41dcd7f4e
+"graphql@npm:16.8.1, graphql@npm:^16.8.1":
+  version: 16.8.1
+  resolution: "graphql@npm:16.8.1"
+  checksum: 8d304b7b6f708c8c5cc164b06e92467dfe36aff6d4f2cf31dd19c4c2905a0e7b89edac4b7e225871131fd24e21460836b369de0c06532644d15b461d55b1ccc0
   languageName: node
   linkType: hard
 
@@ -4583,90 +4520,90 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joist-codegen@npm:1.104.2, joist-codegen@npm:^1.104.2":
-  version: 1.104.2
-  resolution: "joist-codegen@npm:1.104.2"
+"joist-codegen@npm:1.108.10, joist-codegen@npm:^1.108.10":
+  version: 1.108.10
+  resolution: "joist-codegen@npm:1.108.10"
   dependencies:
     "@dprint/formatter": ^0.2.0
     "@dprint/json": 0.15.6
     "@types/pluralize": 0.0.30
     change-case: ^4.1.2
     is-plain-object: ^5.0.0
-    joist-utils: 1.104.2
+    joist-utils: 1.108.10
     knex: ^2.5.1
     pg: ^8.11.3
     pg-structure: ^7.15.0
     pluralize: ^8.0.0
     ts-poet: ^6.6.0
-  checksum: 2f032423470cbd5a43068ed9676ed60a3f2e2595bef6f8d429eabaed9819384777466f56590c49d9e9150f17a5e6baf36c443d0752594fb0e53edeb70d747d5c
+  checksum: 95e8f78f9f9d5a6832b4d6a800ed72b2cf343f2b501a618468b94f44502f839637376e603a884ca1b5f797eea5936e43f85d23d4e49d47dbbd1b3244fad26395
   languageName: node
   linkType: hard
 
-"joist-graphql-codegen@npm:^1.104.2":
-  version: 1.104.2
-  resolution: "joist-graphql-codegen@npm:1.104.2"
+"joist-graphql-codegen@npm:^1.108.10":
+  version: 1.108.10
+  resolution: "joist-graphql-codegen@npm:1.108.10"
   dependencies:
     "@dprint/formatter": ^0.2.0
     "@dprint/json": 0.15.6
     "@types/prettier": ^3.0.0
     change-case: ^4.1.2
-    graphql: ^16.8.0
+    graphql: ^16.8.1
     is-plain-object: ^5.0.0
-    joist-codegen: 1.104.2
-    joist-utils: 1.104.2
+    joist-codegen: 1.108.10
+    joist-utils: 1.108.10
     pluralize: ^8.0.0
     prettier: 2.8.8
     ts-poet: ^6.6.0
-  checksum: cac25b048fea2324b234ff14eb0ef81f94b4db5f9a0c11038f0c1618887576f68e1251802927a525557471087f0a49f8ffe020cb577b3656b1ad4af3020fa63a
+  checksum: 270e9b6920b25fa4145c73d648dec0e3d605ff7efe64ff63245371533c73ef126b081945c6d0d8b59c93f4eefd96202221239c26845dd230f613c34655c0d425
   languageName: node
   linkType: hard
 
-"joist-graphql-resolver-utils@npm:^1.104.2":
-  version: 1.104.2
-  resolution: "joist-graphql-resolver-utils@npm:1.104.2"
+"joist-graphql-resolver-utils@npm:^1.108.10":
+  version: 1.108.10
+  resolution: "joist-graphql-resolver-utils@npm:1.108.10"
   dependencies:
-    graphql: ^16.8.0
-    joist-orm: 1.104.2
-    joist-test-utils: 1.104.2
-  checksum: 858482a9b31ebdcb06fb1fe55fce1e7d38056fa9b06141000a80f6b6062a32908e665b66287a86edca97e3b87151c98f5c394ace2f9b9d198e6a0e773d70d6b2
+    graphql: ^16.8.1
+    joist-orm: 1.108.10
+    joist-test-utils: 1.108.10
+  checksum: 23a58379ced02d994de2eee881347404948d78b390a3693390c424064e78e9e241bc4367b87c27d61df28fba5c5549459dc1e9e48984467337af1cf91241ede4
   languageName: node
   linkType: hard
 
-"joist-migration-utils@npm:^1.104.2":
-  version: 1.104.2
-  resolution: "joist-migration-utils@npm:1.104.2"
+"joist-migration-utils@npm:^1.108.10":
+  version: 1.108.10
+  resolution: "joist-migration-utils@npm:1.108.10"
   dependencies:
     "@types/pluralize": 0.0.30
-    joist-utils: 1.104.2
+    joist-utils: 1.108.10
     node-pg-migrate: ^6.2.2
     pg: ^8.11.3
     pg-structure: ^7.15.0
     pluralize: ^8.0.0
-  checksum: 6a3a68a74ea436e6bcb3167b72c615d3db2a62803427eea6df5da4c6d910b20029d86a8d9db150459e963f481e63372d44685b98d16f2d7088593cf26cfe9177
+  checksum: 2590f5d2efe4f0892617c4406da8d83d9dfe40b772cabd3d700a1e97ec555777459ebe7f76d7a6332cabf02160b3f2222a0b39e62913e778e022a659ea486c2e
   languageName: node
   linkType: hard
 
-"joist-orm@npm:1.104.2, joist-orm@npm:^1.104.2":
-  version: 1.104.2
-  resolution: "joist-orm@npm:1.104.2"
+"joist-orm@npm:1.108.10, joist-orm@npm:^1.108.10":
+  version: 1.108.10
+  resolution: "joist-orm@npm:1.108.10"
   dependencies:
     "@types/object-hash": ^3.0.3
     dataloader: ^2.2.2
     is-plain-object: ^5.0.0
-    joist-utils: 1.104.2
+    joist-utils: 1.108.10
     knex: ^2.5.1
     object-hash: ^3.0.0
     pg: ^8.11.3
-  checksum: dd9eda1e898bdfba4ca7a28d94bfc7f458347b38bed51625f99bda929856c1ae819bc48a75155a40e43e5bbf044d2d487fc8c2ccb49b94d0ce54f8ee9b4ccc80
+  checksum: f86648790a1a7563bfae59a5bdc6952fb698e90d083ddd3634162fbd70665483e7234c31051145eaa596fba7c64be448fb273068b9cd56d5ff482c6a0822da60
   languageName: node
   linkType: hard
 
-"joist-test-utils@npm:1.104.2, joist-test-utils@npm:^1.104.2":
-  version: 1.104.2
-  resolution: "joist-test-utils@npm:1.104.2"
+"joist-test-utils@npm:1.108.10, joist-test-utils@npm:^1.108.10":
+  version: 1.108.10
+  resolution: "joist-test-utils@npm:1.108.10"
   dependencies:
     is-plain-object: ^5.0.0
-  checksum: 0673759fce9a8b13f56140fea0088aa0a9a7f362ff96925cc9ef403e8d5f1d49f212210c4e4b4b9d4bddc54c61b7e7435d6f108be57007bc4f68abd2576d248f
+  checksum: 3f9444cba44aefd287b06df1dbc369c71ef7f60470a8f9364612fd238b5b895fc44c0bb73676306d4e5ca20cce1bee172609d14116a06284e65dd60aeaf46f0c
   languageName: node
   linkType: hard
 
@@ -4678,39 +4615,39 @@ __metadata:
     "@graphql-tools/graphql-file-loader": ^8.0.0
     "@graphql-tools/load": ^8.0.0
     "@graphql-tools/schema": ^10.0.0
-    "@homebound/graphql-typescript-possible-types": ^2.14.0
-    "@homebound/graphql-typescript-resolver-scaffolding": ^1.36.0
-    "@homebound/graphql-typescript-simple-resolvers": ^1.48.0
-    "@homebound/tsconfig": ^1.1.0
+    "@homebound/graphql-typescript-possible-types": ^2.17.0
+    "@homebound/graphql-typescript-resolver-scaffolding": ^1.39.0
+    "@homebound/graphql-typescript-simple-resolvers": ^1.51.0
+    "@homebound/tsconfig": ^1.1.1
     "@types/jest": ^29.5.4
     env-cmd: ^10.1.0
     fastify: ^4.23.2
     fastify-plugin: ^4.5.1
-    graphql: 16.8.0
+    graphql: 16.8.1
     jest: ^29.7.0
     jest-jasmine2: ^29.5.0
-    joist-codegen: ^1.104.2
-    joist-graphql-codegen: ^1.104.2
-    joist-graphql-resolver-utils: ^1.104.2
-    joist-migration-utils: ^1.104.2
-    joist-orm: ^1.104.2
-    joist-test-utils: ^1.104.2
+    joist-codegen: ^1.108.10
+    joist-graphql-codegen: ^1.108.10
+    joist-graphql-resolver-utils: ^1.108.10
+    joist-migration-utils: ^1.108.10
+    joist-orm: ^1.108.10
+    joist-test-utils: ^1.108.10
     mercurius: ^13.1.0
     node-pg-migrate: ^6.2.2
     prettier: ^2.8.8
     ts-jest: ^29.1.1
-    tsx: ^3.12.10
+    tsx: ^3.13.0
     typescript: ^5.2.2
   languageName: unknown
   linkType: soft
 
-"joist-utils@npm:1.104.2":
-  version: 1.104.2
-  resolution: "joist-utils@npm:1.104.2"
+"joist-utils@npm:1.108.10":
+  version: 1.108.10
+  resolution: "joist-utils@npm:1.108.10"
   dependencies:
     pg: ^8.11.3
     pg-connection-string: ^2.6.2
-  checksum: f06ce46e262b2ad1cf0e0ee6f3b7bef243f352ace0fff6d5afb59ec45d6dfc70048b1426f7dbb8a61efa8af60bc0e8acfa66490a367dccbef487894040084af5
+  checksum: 7963848265c08f25cb844b177157a314842e24c050df5bc459c0033bde3b08e38ea56fbb6f652b82ec9a2656072b8ced1a7244ace054c774a99a7d6a6fedca91
   languageName: node
   linkType: hard
 
@@ -6827,16 +6764,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-poet@npm:^5.0.1":
-  version: 5.2.0
-  resolution: "ts-poet@npm:5.2.0"
-  dependencies:
-    "@dprint/formatter": ^0.2.0
-    "@dprint/typescript": ^0.71.2
-  checksum: cf38e73a3e03784774d2017a04963805340d152eddbff906abdcee7b2631b82e7f8c25d2778ec0d2a3aff559375628d5c9299f7d4c3297bfa2a182b16f536a83
-  languageName: node
-  linkType: hard
-
 "ts-poet@npm:^6.6.0":
   version: 6.6.0
   resolution: "ts-poet@npm:6.6.0"
@@ -6853,27 +6780,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:~2.4.0":
-  version: 2.4.0
-  resolution: "tslib@npm:2.4.0"
-  checksum: 8c4aa6a3c5a754bf76aefc38026134180c053b7bd2f81338cb5e5ebf96fefa0f417bff221592bf801077f5bf990562f6264fecbc42cd3309b33872cb6fc3b113
-  languageName: node
-  linkType: hard
-
-"tsx@npm:^3.12.10":
-  version: 3.12.10
-  resolution: "tsx@npm:3.12.10"
+"tsx@npm:^3.13.0":
+  version: 3.13.0
+  resolution: "tsx@npm:3.13.0"
   dependencies:
-    "@esbuild-kit/cjs-loader": ^2.4.2
-    "@esbuild-kit/core-utils": ^3.3.0
-    "@esbuild-kit/esm-loader": ^2.6.3
-    fsevents: ~2.3.2
+    esbuild: ~0.18.20
+    fsevents: ~2.3.3
+    get-tsconfig: ^4.7.2
+    source-map-support: ^0.5.21
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
-    tsx: dist/cli.js
-  checksum: 84fbbdbb90a05ecc764aee92fbe234b45939ccba34a08298fcec2bb9cb2ecb7676b21e676dd12681279490a7ac55bb81897ce503775cbcce0f76703eb282bb37
+    tsx: dist/cli.mjs
+  checksum: ef858574e110d16a7ca9bbb3a5edeeafd37026ebed6cdd390c4707ad64005024c55fd3142a8f89732c79176196afa7d27073f586966ff0cae0126159ebd58be4
   languageName: node
   linkType: hard
 
