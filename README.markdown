@@ -19,16 +19,17 @@ There are no examples of business logic or Joist's various features; for those s
 
 A typical workflow for adding a new entity looks like:
 
-- Run `npm run joist-new-migration "add publisher"`
-- Edit the `migrations/...add-publisher.ts` file and add
+- Run `npm run pg-new-migration "add book review"`
+- Edit the `migrations/...add-book-review.ts` file and add
   ```typescript
-  createEntityTable(pgm, "publishers", {
-    name: { type: "text", notNull: true },
+  createEntityTable(pgm, "book_reviews", {
+    book_id: foreignKey("books"),
+    rating: { type: "integer", notNull: true },
   });
   ```
-- Run `npm run pg-migrate`
+- Run `yarn pg-migrate`
   - If you change your migration, and want to re-apply it from scratch, run `docker-compose exec db ./reset.sh`
-- Run `npm run joist-codegen`
+- Run `yarn joist-codegen`
 - Copy/paste the `Author.test.ts` and write a test for `Publisher`
 
 ## Steps Taken to Setup This Repo
@@ -57,5 +58,5 @@ TODO: Automate this with more, probably with mrm.
 - Add `joist-codegen` script, run it
 - Add `Author.test.ts`
 - Add `dotenv` to `package.json`
-- Add `joist-new-migration` to `package.json`
+- Add `pg-new-migration` to `package.json`
 - Add `.gitattributes` to suppress diffs on generated files
