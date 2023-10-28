@@ -4,9 +4,13 @@
     "resolvers/mutations/author/saveAuthorResolver.ts",
     "resolvers/mutations/book/saveBookResolver.test.ts",
     "resolvers/mutations/book/saveBookResolver.ts",
+    "resolvers/mutations/bookReview/saveBookReviewResolver.test.ts",
+    "resolvers/mutations/bookReview/saveBookReviewResolver.ts",
     "resolvers/objects/author/authorResolvers.test.ts",
     "resolvers/objects/author/authorResolvers.ts",
     "resolvers/objects/book/bookResolvers.test.ts",
-    "resolvers/objects/book/bookResolvers.ts"
+    "resolvers/objects/book/bookResolvers.ts",
+    "resolvers/objects/bookReview/bookReviewResolvers.test.ts",
+    "resolvers/objects/bookReview/bookReviewResolvers.ts"
   ]
 }

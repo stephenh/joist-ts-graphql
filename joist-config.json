@@ -1,5 +1,5 @@
 {
   "codegenPlugins": ["joist-graphql-codegen"],
-  "entities": { "Author": { "tag": "a" }, "Book": { "tag": "b" } },
+  "entities": { "Author": { "tag": "a" }, "Book": { "tag": "b" }, "BookReview": { "tag": "br" } },
   "entitiesDirectory": "./src/entities"
 }

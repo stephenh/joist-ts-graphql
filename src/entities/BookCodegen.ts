@@ -2,6 +2,7 @@ import {
   BaseEntity,
   Changes,
   cleanStringValue,
+  Collection,
   ConfigApi,
   EntityFilter,
   EntityGraphQLFilter,
@@ -11,6 +12,7 @@ import {
   FilterOf,
   Flavor,
   GraphQLFilterOf,
+  hasMany,
   hasOne,
   isLoaded,
   Lens,
@@ -28,7 +30,18 @@ import {
   ValueFilter,
   ValueGraphQLFilter,
 } from "joist-orm";
-import { Author, AuthorId, authorMeta, AuthorOrder, Book, bookMeta, newBook } from "./entities";
+import {
+  Author,
+  AuthorId,
+  authorMeta,
+  AuthorOrder,
+  Book,
+  bookMeta,
+  BookReview,
+  BookReviewId,
+  bookReviewMeta,
+  newBook,
+} from "./entities";
 import type { EntityManager } from "./entities";
 
 export type BookId = Flavor<string, Book>;
@@ -44,10 +57,12 @@ export interface BookFields {
 export interface BookOpts {
   title: string;
   author: Author | AuthorId;
+  reviews?: BookReview[];
 }
 
 export interface BookIdsOpts {
   authorId?: AuthorId | null;
+  reviewIds?: BookReviewId[] | null;
 }
 
 export interface BookFilter {
@@ -56,6 +71,7 @@ export interface BookFilter {
   createdAt?: ValueFilter<Date, never>;
   updatedAt?: ValueFilter<Date, never>;
   author?: EntityFilter<Author, AuthorId, FilterOf<Author>, never>;
+  reviews?: EntityFilter<BookReview, BookReviewId, FilterOf<BookReview>, null | undefined>;
 }
 
 export interface BookGraphQLFilter {
@@ -64,6 +80,7 @@ export interface BookGraphQLFilter {
   createdAt?: ValueGraphQLFilter<Date>;
   updatedAt?: ValueGraphQLFilter<Date>;
   author?: EntityGraphQLFilter<Author, AuthorId, GraphQLFilterOf<Author>, never>;
+  reviews?: EntityGraphQLFilter<BookReview, BookReviewId, GraphQLFilterOf<BookReview>, null | undefined>;
 }
 
 export interface BookOrder {
@@ -95,6 +112,8 @@ export abstract class BookCodegen extends BaseEntity<EntityManager> {
     optIdsType: BookIdsOpts;
     factoryOptsType: Parameters<typeof newBook>[1];
   };
+
+  readonly reviews: Collection<Book, BookReview> = hasMany(bookReviewMeta, "reviews", "book", "book_id", undefined);
 
   readonly author: ManyToOneReference<Book, Author, never> = hasOne(authorMeta, "author", "books");
 

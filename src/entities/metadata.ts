@@ -1,5 +1,5 @@
 import { BaseEntity, configureMetadata, EntityManager as EntityManager1, EntityMetadata, KeySerde, PrimitiveSerde } from "joist-orm";
-import { Author, authorConfig, Book, bookConfig, newAuthor, newBook } from "./entities";
+import { Author, authorConfig, Book, bookConfig, BookReview, bookReviewConfig, newAuthor, newBook, newBookReview } from "./entities";
 
 export class EntityManager extends EntityManager1<{}> {}
 
@@ -48,6 +48,7 @@ export const bookMeta: EntityMetadata<Book> = {
     "createdAt": { kind: "primitive", fieldName: "createdAt", fieldIdName: undefined, derived: "orm", required: false, protected: false, type: "Date", serde: new PrimitiveSerde("createdAt", "created_at", "timestamp with time zone"), immutable: false },
     "updatedAt": { kind: "primitive", fieldName: "updatedAt", fieldIdName: undefined, derived: "orm", required: false, protected: false, type: "Date", serde: new PrimitiveSerde("updatedAt", "updated_at", "timestamp with time zone"), immutable: false },
     "author": { kind: "m2o", fieldName: "author", fieldIdName: "authorId", derived: false, required: true, otherMetadata: () => authorMeta, otherFieldName: "books", serde: new KeySerde("a", "author", "author_id", "int"), immutable: false },
+    "reviews": { kind: "o2m", fieldName: "reviews", fieldIdName: "reviewIds", required: false, otherMetadata: () => bookReviewMeta, otherFieldName: "book", serde: undefined, immutable: false },
   },
   allFields: {},
   orderBy: undefined,
@@ -60,5 +61,31 @@ export const bookMeta: EntityMetadata<Book> = {
 
 (Book as any).metadata = bookMeta;
 
-export const allMetadata = [authorMeta, bookMeta];
+export const bookReviewMeta: EntityMetadata<BookReview> = {
+  cstr: BookReview,
+  type: "BookReview",
+  baseType: undefined,
+  idType: "int",
+  idTagged: true,
+  tagName: "br",
+  tableName: "book_reviews",
+  fields: {
+    "id": { kind: "primaryKey", fieldName: "id", fieldIdName: undefined, required: true, serde: new KeySerde("br", "id", "id", "int"), immutable: true },
+    "rating": { kind: "primitive", fieldName: "rating", fieldIdName: undefined, derived: false, required: true, protected: false, type: "number", serde: new PrimitiveSerde("rating", "rating", "int"), immutable: false },
+    "createdAt": { kind: "primitive", fieldName: "createdAt", fieldIdName: undefined, derived: "orm", required: false, protected: false, type: "Date", serde: new PrimitiveSerde("createdAt", "created_at", "timestamp with time zone"), immutable: false },
+    "updatedAt": { kind: "primitive", fieldName: "updatedAt", fieldIdName: undefined, derived: "orm", required: false, protected: false, type: "Date", serde: new PrimitiveSerde("updatedAt", "updated_at", "timestamp with time zone"), immutable: false },
+    "book": { kind: "m2o", fieldName: "book", fieldIdName: "bookId", derived: false, required: true, otherMetadata: () => bookMeta, otherFieldName: "reviews", serde: new KeySerde("b", "book", "book_id", "int"), immutable: false },
+  },
+  allFields: {},
+  orderBy: undefined,
+  timestampFields: { createdAt: "createdAt", updatedAt: "updatedAt", deletedAt: undefined },
+  config: bookReviewConfig,
+  factory: newBookReview,
+  baseTypes: [],
+  subTypes: [],
+};
+
+(BookReview as any).metadata = bookReviewMeta;
+
+export const allMetadata = [authorMeta, bookMeta, bookReviewMeta];
 configureMetadata(allMetadata);

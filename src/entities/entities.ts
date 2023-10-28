@@ -6,8 +6,10 @@
 
 export * from "./AuthorCodegen";
 export * from "./BookCodegen";
+export * from "./BookReviewCodegen";
 export * from "./Author";
 export * from "./Book";
+export * from "./BookReview";
 
 export * from "./factories";
 export * from "./metadata";

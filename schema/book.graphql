@@ -10,6 +10,7 @@ type Book {
   id: ID!
   title: String!
   author: Author!
+  reviews: [BookReview!]!
 }
 
 input SaveBookInput {
