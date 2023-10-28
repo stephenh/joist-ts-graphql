@@ -12,7 +12,7 @@ redb:
 	docker compose up --wait db
 	docker compose exec db ./reset.sh
 	yarn pg-migrate
-	yarn joist-codegen
+	yarn codegen
 
 psql:
 	docker compose exec db psql --username sample_user --dbname sample_app
