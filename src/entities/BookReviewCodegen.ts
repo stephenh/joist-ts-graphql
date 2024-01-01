@@ -6,9 +6,11 @@ import {
   EntityGraphQLFilter,
   EntityMetadata,
   EntityOrmField,
-  fail,
+  failNoIdYet,
   FilterOf,
   Flavor,
+  getField,
+  getOrmField,
   GraphQLFilterOf,
   hasOne,
   isLoaded,
@@ -24,20 +26,31 @@ import {
   PartialOrNull,
   setField,
   setOpts,
+  TaggedId,
+  toIdOf,
   ValueFilter,
   ValueGraphQLFilter,
 } from "joist-orm";
-import { Book, BookId, bookMeta, BookOrder, BookReview, bookReviewMeta, newBookReview } from "./entities";
-import type { EntityManager } from "./entities";
+import {
+  Book,
+  BookId,
+  bookMeta,
+  BookOrder,
+  BookReview,
+  bookReviewMeta,
+  Entity,
+  EntityManager,
+  newBookReview,
+} from "./entities";
 
 export type BookReviewId = Flavor<string, BookReview>;
 
 export interface BookReviewFields {
-  id: { kind: "primitive"; type: number; unique: true; nullable: false };
-  rating: { kind: "primitive"; type: number; unique: false; nullable: never };
-  createdAt: { kind: "primitive"; type: Date; unique: false; nullable: never };
-  updatedAt: { kind: "primitive"; type: Date; unique: false; nullable: never };
-  book: { kind: "m2o"; type: Book; nullable: never };
+  id: { kind: "primitive"; type: number; unique: true; nullable: never };
+  rating: { kind: "primitive"; type: number; unique: false; nullable: never; derived: false };
+  createdAt: { kind: "primitive"; type: Date; unique: false; nullable: never; derived: true };
+  updatedAt: { kind: "primitive"; type: Date; unique: false; nullable: never; derived: true };
+  book: { kind: "m2o"; type: Book; nullable: never; derived: false };
 }
 
 export interface BookReviewOpts {
@@ -50,7 +63,7 @@ export interface BookReviewIdsOpts {
 }
 
 export interface BookReviewFilter {
-  id?: ValueFilter<BookReviewId, never>;
+  id?: ValueFilter<BookReviewId, never> | null;
   rating?: ValueFilter<number, never>;
   createdAt?: ValueFilter<Date, never>;
   updatedAt?: ValueFilter<Date, never>;
@@ -80,7 +93,7 @@ bookReviewConfig.addRule(newRequiredRule("createdAt"));
 bookReviewConfig.addRule(newRequiredRule("updatedAt"));
 bookReviewConfig.addRule(newRequiredRule("book"));
 
-export abstract class BookReviewCodegen extends BaseEntity<EntityManager> {
+export abstract class BookReviewCodegen extends BaseEntity<EntityManager, string> implements Entity {
   static defaultValues: object = {};
   static readonly tagName = "br";
   static readonly metadata: EntityMetadata<BookReview>;
@@ -95,31 +108,29 @@ export abstract class BookReviewCodegen extends BaseEntity<EntityManager> {
     factoryOptsType: Parameters<typeof newBookReview>[1];
   };
 
-  readonly book: ManyToOneReference<BookReview, Book, never> = hasOne(bookMeta, "book", "reviews");
-
   constructor(em: EntityManager, opts: BookReviewOpts) {
     super(em, bookReviewMeta, BookReviewCodegen.defaultValues, opts);
     setOpts(this as any as BookReview, opts, { calledFromConstructor: true });
   }
 
   get id(): BookReviewId {
-    return this.idMaybe || fail("BookReview has no id yet");
+    return this.idMaybe || failNoIdYet("BookReview");
   }
 
   get idMaybe(): BookReviewId | undefined {
-    return this.idTaggedMaybe;
+    return toIdOf(bookReviewMeta, this.idTaggedMaybe);
   }
 
-  get idTagged(): BookReviewId {
-    return this.idTaggedMaybe || fail("BookReview has no id tagged yet");
+  get idTagged(): TaggedId {
+    return this.idTaggedMaybe || failNoIdYet("BookReview");
   }
 
-  get idTaggedMaybe(): BookReviewId | undefined {
-    return this.__orm.data["id"];
+  get idTaggedMaybe(): TaggedId | undefined {
+    return getField(this, "id");
   }
 
   get rating(): number {
-    return this.__orm.data["rating"];
+    return getField(this, "rating");
   }
 
   set rating(rating: number) {
@@ -127,11 +138,11 @@ export abstract class BookReviewCodegen extends BaseEntity<EntityManager> {
   }
 
   get createdAt(): Date {
-    return this.__orm.data["createdAt"];
+    return getField(this, "createdAt");
   }
 
   get updatedAt(): Date {
-    return this.__orm.data["updatedAt"];
+    return getField(this, "updatedAt");
   }
 
   set(opts: Partial<BookReviewOpts>): void {
@@ -166,5 +177,10 @@ export abstract class BookReviewCodegen extends BaseEntity<EntityManager> {
 
   isLoaded<H extends LoadHint<BookReview>>(hint: H): this is Loaded<BookReview, H> {
     return isLoaded(this as any as BookReview, hint);
+  }
+
+  get book(): ManyToOneReference<BookReview, Book, never> {
+    const { relations } = getOrmField(this);
+    return relations.book ??= hasOne(this as any as BookReview, bookMeta, "book", "reviews");
   }
 }
