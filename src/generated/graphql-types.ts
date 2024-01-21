@@ -1,4 +1,4 @@
-import { GraphQLResolveInfo } from "graphql";
+import { GraphQLResolveInfo, GraphQLScalarType } from "graphql";
 import { Context } from "src/context";
 import { Author, Book, BookReview } from "src/entities";
 
@@ -12,6 +12,7 @@ export interface Resolvers {
   SaveAuthorResult?: SaveAuthorResultResolvers;
   SaveBookResult?: SaveBookResultResolvers;
   SaveBookReviewResult?: SaveBookReviewResultResolvers;
+  DateTime: GraphQLScalarType;
 }
 
 export type UnionResolvers = {};

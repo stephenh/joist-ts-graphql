@@ -3,6 +3,7 @@ type Query {
 }
 
 type Mutation
+scalar DateTime
 
 schema {
   query: Query
