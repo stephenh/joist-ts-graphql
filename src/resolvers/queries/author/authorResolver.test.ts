@@ -3,8 +3,10 @@ import { QueryAuthorArgs } from "src/generated/graphql-types";
 import { author } from "src/resolvers/queries/author/authorResolver";
 import { run } from "src/resolvers/testUtils";
 
-describe("author", () => {
-  it("handles this business case", () => {});
+describe.skip("author", () => {
+  it("handles this business case", () => {
+    fail();
+  });
 });
 
 async function runAuthor(ctx: Context, argsFn: () => QueryAuthorArgs) {

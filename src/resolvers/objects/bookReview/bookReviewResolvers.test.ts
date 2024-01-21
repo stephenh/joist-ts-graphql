@@ -1,6 +1,6 @@
 import { newBookReview } from "src/entities";
 import { bookReviewResolvers } from "src/resolvers/objects/bookReview/bookReviewResolvers";
-import { makeRunObject, makeRunObjectFields } from "src/resolvers/testUtils";
+import { makeRunObjectField, makeRunObjectFields } from "src/resolvers/testUtils";
 
 describe("bookReviewResolvers", () => {
   it.withCtx("can return", async (ctx) => {
@@ -14,4 +14,4 @@ describe("bookReviewResolvers", () => {
 });
 
 const runBookReviewKeys = makeRunObjectFields(bookReviewResolvers);
-const runBookReview = makeRunObject(bookReviewResolvers);
+const runBookReview = makeRunObjectField(bookReviewResolvers);
